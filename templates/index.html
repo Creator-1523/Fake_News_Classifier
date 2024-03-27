@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            background-color: blueviolet;
+            color: white;
+        }
+
+        a {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fake News Classifier</h1>
+    <div>
+        <form method="post" action="/predict">
+            <textarea rows="15" cols="35" name="news-content" placeholder="Type or paste your News here">
+                {{news_text}}</textarea>
+            <div>
+                <button>
+                    Check Fake
+                </button>
+                <button>
+                    <a href="/">Reset</a>
+                </button>
+            </div>
+        </form>
+        {% if predictions=="True" %}
+        <h2>True</h2>
+        {% elif predictions=="Fake" %}
+        <h2>Fake</h2>
+        {% endif %}
+
+
+    </div>
+</body>
+
+</html>
